@@ -1,0 +1,1 @@
+INSERT INTO librarian (id, name, phone, email, version) VALUES (1, 'med', '0553', 'med@gmail.com', 0);
