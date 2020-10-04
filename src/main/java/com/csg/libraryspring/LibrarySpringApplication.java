@@ -29,7 +29,10 @@ public class LibrarySpringApplication {
 
   @PostConstruct
   public void initData() {
+    initLibrarian();
+  }
 
+  public void initLibrarian() {
     List<Librarian> librarians = Stream.of(
         new Librarian("med", "med@gmail.com"),
         new Librarian("morad", "morad@gmail.com")
@@ -37,5 +40,4 @@ public class LibrarySpringApplication {
 
     librarianRepository.saveAll(librarians);
   }
-
 }
