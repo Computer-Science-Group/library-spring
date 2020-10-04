@@ -36,5 +36,8 @@ public class Librarian {
   @Version
   private int version;
 
-
+  public Librarian(String name, String email) {
+    this.name = name;
+    this.email = email;
+  }
 }
