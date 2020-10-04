@@ -1,4 +1,4 @@
-package com.csg.libraryspring.entity;
+package com.csg.libraryspring.model;
 
 import lombok.*;
 
@@ -6,12 +6,19 @@ import javax.persistence.*;
 
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    int id;
+    private long id;
 
     @Column
-    String name;
+    private String name;
+
+    @Version
+    private int version;
+
+
 }
