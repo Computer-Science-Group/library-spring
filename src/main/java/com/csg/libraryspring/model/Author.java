@@ -1,6 +1,8 @@
 package com.csg.libraryspring.model;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -10,15 +12,12 @@ import javax.persistence.*;
 @AllArgsConstructor
 public class Author {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private long id;
 
     @Column
-    private String firstname;
-
-    @Column
-    private String lastname;
+    private String fullName;
 
     @Version
     private int version;
