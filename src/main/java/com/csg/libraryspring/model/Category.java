@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 
 @Entity
 @Data
@@ -22,5 +24,10 @@ public class Category {
     @Version
     private int version;
 
+    @OneToMany(mappedBy = "category")
+    private Collection<Book> books = new ArrayList<Book>();
 
+    public Category(String name) {
+        this.name = name;
+    }
 }

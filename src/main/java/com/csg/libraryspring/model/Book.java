@@ -1,17 +1,15 @@
 package com.csg.libraryspring.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Version;
+import javax.persistence.*;
 
 @Data
-
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Book {
 
@@ -28,4 +26,12 @@ public class Book {
 
   @Version
   private int version;
+
+  @ManyToOne
+  @JoinColumn(name = "CATEGORY_ID")
+  private Category category;
+
+  public Book(String title) {
+    this.title = title;
+  }
 }
